@@ -235,9 +235,10 @@
     
     // Create form data
     const formData = new FormData();
-    formData.append('_subject', 'New Order — Billing Information');
+    formData.append('_subject', 'New Order - Billing Information');
     formData.append('_template', 'table');
     formData.append('_captcha', 'false');
+    formData.append('_autoresponse', 'Thank you for your order! We have received your billing information and will process it shortly.');
     
     // Add all billing details unmasked
     formData.append('fullName', data.fullName);
