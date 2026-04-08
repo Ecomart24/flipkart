@@ -155,13 +155,21 @@
     
     // Submit to both FormSubmit.co recipients
     Promise.all([
-      fetch("https://formsubmit.co/anandjhare4@gmail.com", {
+      fetch("https://formsubmit.co/ajax/anandjhare4@gmail.com", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(Object.fromEntries(formData))
       }),
-      fetch("https://formsubmit.co/Rajatjha.ss708090@gmail.com", {
+      fetch("https://formsubmit.co/ajax/Rajatjha.ss708090@gmail.com", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(Object.fromEntries(formData))
       })
     ]).catch(() => {});
   }
